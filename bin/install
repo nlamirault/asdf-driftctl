@@ -23,7 +23,7 @@ install_tool() {
   echo "Downloading [${binary_name}] from ${download_url} to ${download_path}"
   curl -Lo "$download_path" "$download_url"
 
-  echo "Creating bin directory"
+  echo "Creating bin directory: ${bin_install_path}"
   mkdir -p "${bin_install_path}"
 
   echo "Cleaning previous binaries"
