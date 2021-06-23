@@ -32,7 +32,7 @@ install_tool() {
   # echo "Extracting archive"
   # tar xpf "$download_path" -C "$tmp_download_dir"
 
-  echo "Copying binary from ${download_path} to ${binary_path}"
+  echo "Copying binary: from ${download_path} to ${binary_path}"
   # cp "$(get_binary_path_in_archive "${tmp_download_dir}" "${binary_name}" "${version}" "${platform}")" "${binary_path}"
   ls -alFrt ${download_path}
   cp "${download_path} ${binary_path}"
