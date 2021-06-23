@@ -58,10 +58,10 @@ get_filename() {
   # version_short=$(echo "$version" | tr -d "v")
 
   case "${OSTYPE}" in
-    linux*) echo "${binary_name}_${platform}" ;;
-    darwin*) echo "${binary_name}_${platform}" ;;
-    msys|windows*) echo "${binary_name}_${platform}.exe" ;;
-    *) fail "Unsupported platform" ;;
+  linux*) echo "${binary_name}_${platform}" ;;
+  darwin*) echo "${binary_name}_${platform}" ;;
+  msys | windows*) echo "${binary_name}_${platform}.exe" ;;
+  *) fail "Unsupported platform" ;;
   esac
 }
 

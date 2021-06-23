@@ -10,9 +10,6 @@ jobs:
 
   plugin_test:
     strategy:
-      # matrix:
-      #   os: [macos-latest, ubuntu-latest]
-      #   driftctl: [v0.11.0]
       fail-fast: false
       matrix:
         os:
