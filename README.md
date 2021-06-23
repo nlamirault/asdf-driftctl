@@ -7,7 +7,7 @@
 ## Install
 
 ```shell
-asdf plugin-add gitopstoolkit https://github.com/nlamirault/asdf-driftctl.git
+asdf plugin add driftctl https://github.com/nlamirault/asdf-driftctl.git
 ```
 
 ## Use
