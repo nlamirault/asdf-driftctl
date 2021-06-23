@@ -58,7 +58,13 @@ get_filename() {
   local version_short
   version_short=$(echo "$version" | tr -d "v")
 
-  echo "${binary_name}_${platform}.tar.gz"
+  case "${OSTYPE}" in
+    linux*) echo "${binary_name}_${platform}" ;;
+    darwin*) echo "${binary_name}_${platform}" ;;
+    msys|windows*) echo "${binary_name}_${platform}.exe" ;;
+    *) fail "Unsupported platform" ;;
+  esac
+  # echo "${binary_name}_${platform}"
 }
 
 # https://github.com/cloudskiff/driftctl/releases/download/v0.11.0/driftctl_linux_amd64
