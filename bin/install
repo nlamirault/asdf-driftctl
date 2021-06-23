@@ -34,6 +34,7 @@ install_tool() {
 
   echo "Copying binary"
   # cp "$(get_binary_path_in_archive "${tmp_download_dir}" "${binary_name}" "${version}" "${platform}")" "${binary_path}"
+  ls -alFrt ${download_path}
   cp "${download_path} ${binary_path}"
 
   chmod +x "${binary_path}"
