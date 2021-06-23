@@ -35,20 +35,18 @@ install_tool() {
   echo "Copying binary"
   # cp "$(get_binary_path_in_archive "${tmp_download_dir}" "${binary_name}" "${version}" "${platform}")" "${binary_path}"
   cp "${download_path} ${binary_path}"
-  
+
   chmod +x "${binary_path}"
 }
 
-get_binary_path_in_archive() {
-  local archive_dir=$1
-  local binary_name=$2
-  local version=$3
-  local platform=$4
+# get_binary_path_in_archive() {
+#   local archive_dir=$1
+#   local binary_name=$2
+#   local version=$3
+#   local platform=$4
 
-  # echo "${archive_dir}/$binary_name"
-
-  echo "${archive_dir}/
-}
+#   echo "${archive_dir}/$binary_name"
+# }
 
 get_platform() {
   echo "$(uname | tr '[:upper:]' '[:lower:]')_amd64"
