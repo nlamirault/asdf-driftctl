@@ -11,8 +11,8 @@ install_tool() {
   local binary_name=$5
 
   local platform
-  local bin_install_path="$install_path/bin"
-  local binary_path="$bin_install_path/${binary_name}"
+  local bin_install_path="${install_path}/bin"
+  local binary_path="${bin_install_path}/${binary_name}"
   local download_url
   local download_path
 
@@ -26,13 +26,13 @@ install_tool() {
   echo "Creating bin directory: ${bin_install_path}"
   mkdir -p "${bin_install_path}"
 
-  echo "Cleaning previous binaries"
-  rm -f "$binary_path" 2>/dev/null || true
+  echo "Cleaning previous binaries: ${binary_path}"
+  rm -f "${binary_path}" 2>/dev/null || true
 
   # echo "Extracting archive"
   # tar xpf "$download_path" -C "$tmp_download_dir"
 
-  echo "Copying binary"
+  echo "Copying binary from ${download_path} to ${binary_path}"
   # cp "$(get_binary_path_in_archive "${tmp_download_dir}" "${binary_name}" "${version}" "${platform}")" "${binary_path}"
   ls -alFrt ${download_path}
   cp "${download_path} ${binary_path}"
