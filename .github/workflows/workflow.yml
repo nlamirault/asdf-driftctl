@@ -11,7 +11,7 @@ jobs:
   plugin_test:
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest]
+        os: [windows-latest, macos-latest, ubuntu-latest]
         driftctl: [v0.11.0]
 
     runs-on: ${{ matrix.os }}
