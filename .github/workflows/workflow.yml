@@ -18,6 +18,8 @@ jobs:
         os:
           - macos-latest
           - ubuntu-latest
+        driftctl:
+          - v0.11.0
 
     runs-on: ${{ matrix.os }}
 
@@ -26,6 +28,7 @@ jobs:
         uses: asdf-vm/actions/plugin-test@v1.1.0
         with:
           command: driftctl version
+          version: ${{ matrix.driftctl }}
         env:
           GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
