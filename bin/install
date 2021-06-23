@@ -29,8 +29,8 @@ install_tool() {
   echo "Cleaning previous binaries"
   rm -f "$binary_path" 2>/dev/null || true
 
-  echo "Extracting archive"
-  tar xpf "$download_path" -C "$tmp_download_dir"
+  # echo "Extracting archive"
+  # tar xpf "$download_path" -C "$tmp_download_dir"
 
   echo "Copying binary"
   cp "$(get_binary_path_in_archive "${tmp_download_dir}" "${binary_name}" "${version}" "${platform}")" "${binary_path}"
@@ -64,7 +64,6 @@ get_filename() {
     msys|windows*) echo "${binary_name}_${platform}.exe" ;;
     *) fail "Unsupported platform" ;;
   esac
-  # echo "${binary_name}_${platform}"
 }
 
 # https://github.com/cloudskiff/driftctl/releases/download/v0.11.0/driftctl_linux_amd64
