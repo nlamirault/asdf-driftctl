@@ -33,7 +33,7 @@ install_tool() {
   # tar xpf "$download_path" -C "$tmp_download_dir"
 
   echo "Copying binary: from ${download_path} to ${binary_path}"
-  cp ${download_path} ${binary_path}
+  cp "${download_path}" "${binary_path}"
   chmod +x "${binary_path}"
 }
 
@@ -54,8 +54,8 @@ get_filename() {
   local version="$1"
   local platform="$2"
   local binary_name="$3"
-  local version_short
-  version_short=$(echo "$version" | tr -d "v")
+  # local version_short
+  # version_short=$(echo "$version" | tr -d "v")
 
   case "${OSTYPE}" in
     linux*) echo "${binary_name}_${platform}" ;;
