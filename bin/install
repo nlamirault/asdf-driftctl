@@ -33,6 +33,7 @@ install_tool() {
   # tar xpf "$download_path" -C "$tmp_download_dir"
 
   echo "Copying binary"
+  echo cp "$(get_binary_path_in_archive "${tmp_download_dir}" "${binary_name}" "${version}" "${platform}")" "${binary_path}"
   cp "$(get_binary_path_in_archive "${tmp_download_dir}" "${binary_name}" "${version}" "${platform}")" "${binary_path}"
   chmod +x "${binary_path}"
 }
