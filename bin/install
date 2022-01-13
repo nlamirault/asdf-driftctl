@@ -45,9 +45,21 @@ install_tool() {
 #   echo "${archive_dir}/$binary_name"
 # }
 
-get_platform() {
-  echo "$(uname | tr '[:upper:]' '[:lower:]')_amd64"
+get_cpu() {
+  local machine_hardware_name
+  machine_hardware_name="$(uname -m)"
 
+  case "$machine_hardware_name" in
+    'x86_64') local cpu_type="amd64";;
+    'aarch64') local cpu_type="arm64";;
+    *) local cpu_type="$machine_hardware_name";;
+  esac
+
+  echo "$cpu_type"
+}
+
+get_platform() {
+	echo "$(uname | tr '[:upper:]' '[:lower:]')_$(get_cpu)"
 }
 
 get_filename() {
